@@ -4,18 +4,18 @@
 
 Bienvenue dans ce parcours !
 
-### Objectifs
+## Objectifs
 
--   Travailler dans du code existant, respecter des consignes et trouver sa place comme en entreprise.
--   S'y retrouver dans un code source avec une architecture que vous n'avez pas choisi, et s'adapter à un nouvel environnement.
--   Valider les acquis :
-    -   Création de base de données (à l'aide d'un script existant)
-    -   `Sequelize`
-        -   Création de modèles (pour nos tables)
-        -   Associations entre différentes tables :boom: :sweat:
-        -   Requêtes 
-    -   Les sessions avec `express-session`
-    -   Consolider les trucs `<%= bizarres %>` avec ejs :cold_sweat:
+- Travailler dans du code existant, respecter des consignes et trouver sa place comme en entreprise.
+- S'y retrouver dans un code source avec une architecture que vous n'avez pas choisi, et s'adapter à un nouvel environnement.
+- Valider les acquis :
+  - Création de base de données (à l'aide d'un script existant)
+  - `Sequelize`
+    - Création de modèles (pour nos tables)
+    - Associations entre différentes tables :boom: :sweat:
+    - Requêtes
+  - Les sessions avec `express-session`
+  - Consolider les trucs `<%= bizarres %>` avec ejs :cold_sweat:
 
 ### Le background
 
@@ -29,23 +29,23 @@ Quelques fonctionnalités sont déjà codées et une partie de l'intégration a 
 
 Voici les routes :
 
--   `/` Page d'accueil
--   `/shop` Affiche une page avec toutes les catégories et leurs produits associés. Devra être dynamisée.
--   `/category/:id` Affiche un page avec une catégorie et ses produits associés. Devra être dynamisée.
--   `/product/:id` Affiche le détail d'un produit Devra être dynamisée.
--   `/login` Affiche un formulaire de connexion. (GET / POST) Vous devrez finir le login.
--   `/profile` (Si connecté)
--   `/dashboard` (Si connecté ET admin)
--   En bonus :smile: `/logout` (GET) Vous devrez faire le logout.
--   En bonus :smile: `/register` (GET / POST) , si vous avez le temps, finir la création de compte.
+- `/` Page d'accueil
+- `/shop` Affiche une page avec toutes les catégories et leurs produits associés. Devra être dynamisée.
+- `/category/:id` Affiche un page avec une catégorie et ses produits associés. Devra être dynamisée.
+- `/product/:id` Affiche le détail d'un produit Devra être dynamisée.
+- `/login` Affiche un formulaire de connexion. (GET / POST) Vous devrez finir le login.
+- `/profile` (Si connecté)
+- `/dashboard` (Si connecté ET admin)
+- En bonus :smile: `/logout` (GET) Vous devrez faire le logout.
+- En bonus :smile: `/register` (GET / POST) , si vous avez le temps, finir la création de compte.
 
 ## Installation de l'application
 
-1.  Installer les dépendances de l'application : `npm install`
+1. Installer les dépendances de l'application : `npm install`
 
 ### BDD
 
-1.  Créer une base de données et un utilisateur ayant le droit de s'y connecter (les bons souvenirs des saisons précédentes !).
+1. Créer une base de données et un utilisateur ayant le droit de s'y connecter (les bons souvenirs des saisons précédentes !).
 
 <details>
 <summary>Je ne me rappelle plus trop des commandes...</summary>
@@ -54,7 +54,7 @@ Voici les routes :
 
 2. Exécuter le script SQL fourni dans `data/structure-data.sql` afin de créer les tables dans notre BDD et y ajouter un échantillon de données.
 
-2.  Copier le contenu du fichier `.env.example` dans un fichier `.env` que vous devrez créer, modifier la variables `PG_URL` avec les informations nécessaires pour pouvoir vous connecter à votre BDD.
+3. Copier le contenu du fichier `.env.example` dans un fichier `.env` que vous devrez créer, modifier la variables `PG_URL` avec les informations nécessaires pour pouvoir vous connecter à votre BDD.
 
 ### L'application
 
@@ -87,7 +87,6 @@ Il y a aussi trois produits, deux catégories et deux rôles dans la BDD.
 
 <details>
 <summary>Enfin, voici l'architecture de notre application</summary>
-
 
 ```bash
 .
@@ -161,6 +160,4 @@ Il y a aussi trois produits, deux catégories et deux rôles dans la BDD.
     └── helpers.js
 ```
 
-
 </details>
-
