@@ -23,7 +23,6 @@ router.get('/product/:id', catalogController.product);
 
 // Affichage page formulaire de login
 router.get('/login', sessionController.index);
-//!! Démarre une session user si user existe, vous travaillez dans ce controller
 router.post('/login', sessionController.login);
 
 // !! Bonus : Logout, vous travaillez dans ce controller
