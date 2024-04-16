@@ -4,7 +4,7 @@
     "description": "O-shop",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon"
+        "dev": "node --watch index.js"
     },
     "author": "oclock.io",
     "license": "ISC",

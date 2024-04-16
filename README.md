@@ -54,7 +54,7 @@ Voici les routes :
 
 2. Exécuter le script SQL fourni dans `data/structure-data.sql` afin de créer les tables dans notre BDD et y ajouter un échantillon de données.
 
-3. Copier le contenu du fichier `.env.example` dans un fichier `.env` que vous devrez créer, modifier la variables `PG_URL` avec les informations nécessaires pour pouvoir vous connecter à votre BDD.
+3. Copier le contenu du fichier `.env.example` dans un fichier `.env` que vous devrez créer, modifier la variable `PG_URL` avec les informations nécessaires pour pouvoir vous connecter à votre BDD.
 
 ### L'application
 
@@ -67,7 +67,7 @@ Voici les routes :
 Il y a deux utilisateurs en DB :
 
 1. _John Example_, email : `example@example.com`, mot de passe : `password`, rôle : _customer_
-2. _Maurice Admin_, email: `admin@admin.com`, mot de passe: `password`, rôle : _admin_
+2. _Maurice Admin_, email : `admin@admin.com`, mot de passe: `password`, rôle : _admin_
 
 Il y a aussi trois produits, deux catégories et deux rôles dans la BDD.
 
