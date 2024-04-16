@@ -14,16 +14,11 @@
         <h3 class="mt-3">Les catégories</h3>
 
         <ul>
-            <!-- todo - Dynamiser cette liste -->
-            <li>
-                <a href="/category/1"> Catégorie 1 </a>
-            </li>
-            <li>
-                <a href="/category/2"> Catégorie 2 </a>
-            </li>
-            <li>
-                <a href="/category/3">Catégorie 3</a>
-            </li>
+            <% categories.forEach(category => { %>
+                <li>
+                    <a href="/category/<%= category.id %>"> <%= category.name %> </a>
+                </li>
+            <% }) %>
         </ul>
     </div>
 
