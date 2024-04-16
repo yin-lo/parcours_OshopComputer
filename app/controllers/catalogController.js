@@ -10,11 +10,10 @@ const catalogController = {
             const products = await Product.findAll();
             const categories = await Category.findAll();
 
-            res.render('shop', { 
+            res.render('shop', {
                 categories,
-                products 
+                products,
             });
-
         } catch (error) {
             console.log(error);
             res.status(500).send('Server Error');
@@ -22,8 +21,20 @@ const catalogController = {
     },
 
     category: async (req, res) => {
-        // todo, il faut récupérer la catégorie en fonction de l'id présent dans l'url et la passer à la vue
-        res.render('category');
+        try {
+            const categoryId = Number(req.params.id);
+            const category = await Category.findByPk(categoryId, {
+                association: 'products',
+            });
+
+            res.render('category', {
+                category,
+            });
+
+        } catch (error) {
+            console.log(error);
+            res.status(500).send('Error with categories');
+        }
     },
 
     product: async (req, res) => {
