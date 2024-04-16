@@ -25,7 +25,6 @@ router.get('/product/:id', catalogController.product);
 router.get('/login', sessionController.index);
 router.post('/login', sessionController.login);
 
-// !! Bonus : Logout, vous travaillez dans ce controller
 router.get('/logout', sessionController.logout);
 
 // Affichage page formulaire register

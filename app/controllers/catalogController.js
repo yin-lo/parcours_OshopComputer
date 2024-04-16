@@ -44,7 +44,6 @@ const catalogController = {
             const productId = Number(req.params.id);
             const product = await Product.findByPk(productId);
           
-            console.log(product);
             res.render('product', {
                 product,
             });
