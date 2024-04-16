@@ -12,7 +12,7 @@ const sessionController = {
   
             // avoir tous les champs :
             if (!email || !password) {
-                res.status(401).send(`Les champs sont obligatoires`);
+                throw new Error(`Les champs sont obligatoires`);
             };
 
             // On récupère user avec email et inclure le role
@@ -25,8 +25,7 @@ const sessionController = {
             // Si on ne le trouve pas on envoie un message d'erreur dans un objet:  {error: "Utilisateur ou mot de passe incorrect"} et on render `login` en lui passant l'erreur
 
             if (!user) {
-                res.status(401).send("Utilisateur ou mot de passe incorrect")
-                return;
+                throw new Error("Utilisateur ou mot de passe incorrect");
             }
 
             // Sinon on continue.
@@ -41,8 +40,7 @@ const sessionController = {
             //      Si le mot de passe est incorrect : on envoie un message d'erreur dans un objet:  {error: "Utilisateur ou mot de passe incorrect"} et on render `login` en lui passant l'erreur
 
             if (!passwordIsValid) {
-                res.status(401).send("Utilisateur ou mot de passe incorrect")
-                return;
+               throw new Error("Utilisateur ou mot de passe incorrect");
             }
 
             // On ajoute user à la session
@@ -53,14 +51,16 @@ const sessionController = {
 
             // !! Ne pas modifier cette ligne
             res.redirect('/');
-        } catch (e) {
-            console.error(e.message);
-            res.status(500).send('Server Error');
+            
+        } catch (error) {
+            console.error(error.message);
+            res.render('login', {
+                error: error.message
+            });
         }
     },
 
     logout: (req, res) => {
-        console.log(req.session);
         req.session.destroy();
         res.redirect('/');
     },
