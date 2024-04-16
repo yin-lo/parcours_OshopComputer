@@ -29,7 +29,6 @@ const catalogController = {
                 ],
             });
 
-            console.log(category);
             res.render('category', {
                 category,
             });
@@ -41,18 +40,13 @@ const catalogController = {
     },
 
     product: async (req, res) => {
-        // todo, récupérer le produit demandé en base de données.
         try {
-            const categoryId = Number(req.params.id);
-            const products = await Product.findAll({
-                include: {
-                    association: 'category',
-                    attributes: ['id'],
-                },
-            });
+            const productId = Number(req.params.id);
+            const product = await Product.findByPk(productId);
           
+            console.log(product);
             res.render('product', {
-                products,
+                product,
             });
         } catch (error) {
             console.log(error);
