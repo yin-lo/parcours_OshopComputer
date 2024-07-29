@@ -19,12 +19,11 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            // validate: {
-            //     isUppercase: true,
-            //     isLowercase: true,
-            //     min: 4,
-
-            // }
+        //     validate: {
+        //         isUppercase: true,
+        //         isLowercase: true,
+        //         min: 4,
+        //     }
         },
         role_id: {
             type: DataTypes.INTEGER,
