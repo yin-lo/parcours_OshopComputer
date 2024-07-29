@@ -2,9 +2,9 @@
 
 <div class="breadcrumbs">
     <div class="container">
-        <a href="/">Home</a>
+        <a href="/shop">Home</a>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <a href="/shop">Shop</a>
+        <span>Shop</span>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
         <span><%= product.title %></span>
     </div>
@@ -16,12 +16,11 @@
     </div>
     <div class="product-section-information">
         <h1 class="product-section-title"><%= product.title %></h1>
-        <div class="product-section-price"><%= product.price %> €</div>
+        <div class="product-section-price"><%= product.price %>€</div>
 
         <p><%= product.description %></p>
-        <p>Réf : <%= product.ref %></p>
 
-        <form action="/cart/1" method="POST">
+        <form action="/cart/<%= product.id %>" method="POST">
             <input class="button" value="Ajouter au panier" type="submit">
         </form>
     </div>

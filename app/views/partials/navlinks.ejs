@@ -6,7 +6,7 @@
     <% if (!locals.user) { %>
 
         <li>
-            <a href="/register">Sign up</a>
+            <a href="/register">Signup</a>
         </li>
         <li>
             <a href="/login">Sign in</a>
@@ -16,7 +16,7 @@
             <% if (locals.user.role.name === 'admin') { %>
                 <a href="/dashboard">Admin</a>
             <% } else { %>
-                <a href="/profile">Your profile</a>
+                <a href="/profile">Votre profil</a>
             <% }  %>
         </li>
         <li>
@@ -27,7 +27,7 @@
 
     <li>
         <a href="#!">
-            Basket
+            Panier
             <span class="cart-count">
                 <span><%= 0 %> </span>
             </span>

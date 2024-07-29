@@ -10,10 +10,11 @@ const catalogController = {
             const products = await Product.findAll();
             const categories = await Category.findAll();
 
-            res.render('shop', {
+            res.render('shop', { 
                 categories,
-                products,
+                products 
             });
+
         } catch (error) {
             console.log(error);
             res.status(500).send('Server Error');
@@ -22,34 +23,31 @@ const catalogController = {
 
     category: async (req, res) => {
         try {
-            const categoryId = Number(req.params.id);
-            const category = await Category.findByPk(categoryId, {
-                include:[
-                    { association: 'products',}
-                ],
+            // on récupère l'id de la route paramétrée
+            const id = req.params.id;
+            // on ajoute un include pour avoir accès à une propriété products sur l'objet category contenant les produits dans un tableau 
+            const category = await Category.findByPk(id, {
+                include: 'products',
             });
-
             res.render('category', {
                 category,
             });
-
         } catch (error) {
             console.log(error);
-            res.status(500).send('Error with categories and products');
+            res.status(500).send('Server Error');
         }
     },
 
     product: async (req, res) => {
         try {
-            const productId = Number(req.params.id);
-            const product = await Product.findByPk(productId);
-          
+            const id = req.params.id;
+            const product = await Product.findByPk(id);
             res.render('product', {
                 product,
             });
         } catch (error) {
             console.log(error);
-            res.status(500).send('Error with products');
+            res.status(500).send('Server Error');
         }
     },
 

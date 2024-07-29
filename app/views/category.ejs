@@ -2,9 +2,9 @@
 
 <div class="breadcrumbs">
     <div class="container">
-        <a href="/">Home</a>
+        <a href="/shop">Home</a>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <a href="/shop">Shop</a>
+        <span>Shop</span>
     </div>
 </div>
 
@@ -16,19 +16,17 @@
     <div>
         <div class="products text-center">
 
-            <% category.products.forEach(product => { %>
-            <div class="product">
-                <a href="/product/<%= product.id %>">
-                    <img src="<%= product.image %>" alt="<%= product.title %>" />
-                </a>
-                <a href="/product/<%= product.id %>">
-                    <div class="product-name"><%= product.title %></div>
-                </a>
-                <div class="product-price"><%= product.price %> €</div>
-            </div>
-            <% }) %>
-
-
+            <% for (const product of category.products) { %>
+                <div class="product">
+                    <a href="/product/<%= product.id %>">
+                        <img src="<%= product.image %>" alt="<%= product.title %>" />
+                    </a>
+                    <a href="/product/<%= product.id %>">
+                        <div class="product-name"><%= product.title %></div>
+                    </a>
+                    <div class="product-price"><%= product.price %>€</div>
+                </div>
+            <% } %>
         </div>
     </div>
 </div>

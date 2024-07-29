@@ -12,7 +12,7 @@ const isAdmin = require('../middlewares/isAdmin');
 // Page d'accueil
 router.get('/', catalogController.index);
 
-// page /shop
+// !! page /shop, vous travaillez dans ce controller
 router.get('/shop', catalogController.productsList);
 
 // Affichage d'une catégorie et des produits associés 
@@ -23,8 +23,10 @@ router.get('/product/:id', catalogController.product);
 
 // Affichage page formulaire de login
 router.get('/login', sessionController.index);
+//!! Démarre une session user si user existe, vous travaillez dans ce controller
 router.post('/login', sessionController.login);
 
+// !! Bonus : Logout, vous travaillez dans ce controller
 router.get('/logout', sessionController.logout);
 
 // Affichage page formulaire register

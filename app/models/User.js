@@ -1,7 +1,6 @@
-const { Sequelize, Op,  DataTypes } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../database');
 const Role = require('./Role.js');
-
 
 class User extends Sequelize.Model {}
 
@@ -19,11 +18,6 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-        //     validate: {
-        //         isUppercase: true,
-        //         isLowercase: true,
-        //         min: 4,
-        //     }
         },
         role_id: {
             type: DataTypes.INTEGER,

@@ -1,4 +1,3 @@
-require('dotenv/config');
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(process.env.PG_URL, {
@@ -8,7 +7,6 @@ const sequelize = new Sequelize(process.env.PG_URL, {
     define: {
         updatedAt: 'updated_at',
         createdAt: 'created_at',
-        underscored: true,
     },
 });
 
